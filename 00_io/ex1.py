@@ -22,7 +22,7 @@
 # a = input().split()
 # print(a,type(a))
 
-# map
+# ma
 # map(함수, List 객체)
 a,b,c = map(int, input().split())
 print(a, b, c)
