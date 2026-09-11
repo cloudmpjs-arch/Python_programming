@@ -24,33 +24,18 @@ t = tuple(l)
 print(t)
 
 # 튜플을 이용해서 swap하기
-<<<<<<< HEAD:04_collections/ex4.py
 a, b = 10, 20
 a, b = b, a
-=======
-a,b = 10,20
-a,b = b,a
-print(a,b)
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 
 # 튜플 언패킹
 t = (1, 2, 3, 4)
 
 print(*t)
-<<<<<<< HEAD:04_collections/ex4.py
 a, b, c, d = t
 print(a, b, c, d)
 
 a, *b, c = t
 print(a, b, c)
-=======
-
-a,b,c,d = t
-print(a,b,c,d)
-
-a,*b,c = t
-print(a,b,c)
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 
 t2 = (5, 6)
 print((*t, *t2))
@@ -67,10 +52,6 @@ print(tuple(zip(subjects,scores)))
 #  Tuple Comprehension은 없음
 # ===========================================================
 
-<<<<<<< HEAD:04_collections/ex4.py
-
-=======
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 # Generator 표현식
 gen = (x for x in range(1,11))
 print(gen)
@@ -79,7 +60,6 @@ print(next(gen))
 print(next(gen))
 print(next(gen))
 
-<<<<<<< HEAD:04_collections/ex4.py
 for i in gen:
     print(i, end = " ")
 print()
@@ -88,17 +68,6 @@ print()
 a = [x for x in range(1, 11)]
 b = (x for x in range(1, 11))
 print(a,b)
-=======
-# Generator는 순회가 끝나면 소진됨
-for i in gen:
-    print(i, end=" ")
-print()
-
-# List Comprehension vs Generator 표현식
-a = [x for x in range(1,11)]
-b = (x for x in range(1,11))
-print(a, b)
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 
 print(sum(a), sum(a))
 print(sum(b), sum(b))
@@ -112,19 +81,12 @@ print(result)
 # tuple의 생성자에 generator를 넘겨 값을 순회하면서 튜플을 만듦
 
 
-<<<<<<< HEAD:04_collections/ex4.py
 
 # 두 점의 x, y, z축 좌표값끼리 더한 튜플을 만들기
 p1 = (1, 2, 3)
 p2 = (10, 20, 30)
 
 result = tuple((a + b for a,b in zip(p1, p2)))
-=======
-# 두 점의 x, y, z축 좌표값끼리 더한 튜플을 만들기
-p1 = (1, 2, 3)
-p2 = (10, 20, 30)
-result = tuple(a + b for a,b in zip(p1,p2))
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 print(result)
 
 
@@ -137,11 +99,7 @@ days = ("일","월","화","수","목","금","토")
 hours = (2, 3, 1, 4, 5, 2, 6)
 
 # 1️⃣ 월 ~ 금까지 총 학습시간 출력하기
-<<<<<<< HEAD:04_collections/ex4.py
 print(f"{sum(hours)}시간")                                                    # ✅ 15시간
-=======
-print(f"{sum(hours[1:6])}시간")                                                    # ✅ 15시간
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 
 
 # 2️⃣ 가장 많이 공부한 시간 출력하기
@@ -149,28 +107,18 @@ print(f"{max(hours)}시간")                                                    
 
 
 # 3️⃣ 가장 많이 공부한 요일 출력하기
-<<<<<<< HEAD:04_collections/ex4.py
 result = tuple(a for a,b in zip(days, hours) if b == max(hours))              # ✅ 토요일
 print(f"{result[0]}요일")
 
 hour, day = max(zip(hours, days))
-=======
-print(f"{days[hours.index(max(hours))]}요일")                                                    # ✅ 토요일
-
-hours, day = max(zip(hours, days))
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 print(f"{day}요일")
 
 # 4️⃣ 가장 높은 점수와 가장 낮은 점수 출력하기
 scores = (90, 85, 78, 92, 88, 76)
 
 result = sorted(scores)
-<<<<<<< HEAD:04_collections/ex4.py
 print(f"max 점수: {result[-1]}점, min 점수: {result[0]}점")                  
 print(f"max 점수: {max(scores)}점, min 점수: {min(scores)}점")                   # ✅ max 점수: 92점, min 점수: 76점
-=======
-print(f"max 점수: {result[-1]}점, min 점수: {result[0]}점")                                                    # ✅ max 점수: 92점, min 점수: 76점
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 
 
 # 5️⃣ 과일가게 총 재고 금액 구하기
@@ -180,7 +128,6 @@ stocks = (
     ("체리", 5000, 2),
 )
 
-<<<<<<< HEAD:04_collections/ex4.py
 # 총 재고 금액 출력
 
 total = sum(price * num for _, price, num in stocks)
@@ -189,17 +136,6 @@ print(f"총액: {total:,}원")                                                  
 
 
 
-=======
-# 품목, 가격, 수량 튜플 만들기
-l = tuple(zip(*stocks))
-print(l[0])                                                    # ✅ ('사과', '바나나', '체리')
-print(l[1])                                                    # ✅ (1000, 2000, 5000)
-print(l[2])                                                    # ✅ (5, 3, 2)
-
-# 총 재고 금액 출력
-result = sum(i*j for _,i,j in stocks)
-print(f"총액: {result:,}원")                                                    # ✅ 총액: 21,000원
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
 
 stocks = (
     ("사과", "바나나", "체리"),
@@ -207,10 +143,5 @@ stocks = (
     (5, 3, 2),
 )
 
-<<<<<<< HEAD:04_collections/ex4.py
 total = sum(price * num for _, price, num in zip(*stocks))
 print(f"총액: {total:,}원")                                                    # ✅ 총액: 21,000원
-=======
-total = sum(i*j for _,i,j in zip(*stocks))
-print(f"총액: {total:,}원")
->>>>>>> 227662ca9edff1095e8c665b509d6cefe088bff3:04_collection/ex4.py
